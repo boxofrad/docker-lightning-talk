@@ -1,3 +1,11 @@
+Before Talk:
+
+ssh-copy-id root@46.101.12.207
+docker rm $(docker ps -a -q)
+docker rmi $(docker images -q)
+
+Live Demo:
+
 docker build -t boxofrad/lightning-talk-ruby .
 docker push boxofrad/lightning-talk-ruby
 
