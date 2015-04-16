@@ -1,0 +1,19 @@
+docker build -t boxofrad/lightning-talk-ruby .
+docker push boxofrad/lightning-talk-ruby
+
+docker build -t boxofrad/lightning-talk-php .
+docker push boxofrad/lightning-talk-php
+
+ssh root@46.101.12.207
+
+docker run -d -p 3001:80 boxofrad/lightning-talk-ruby
+docker run -d -p 3002:80 boxofrad/lightning-talk-php
+
+http://46.101.12.207:3001
+http://46.101.12.207:3002
+
+time echo hi
+time docker run -it boxofrad/lightning-talk-ruby echo hi
+
+docker run -it boxofrad/lightning-talk-php /bin/bash
+rm -rf / --no-preserve-root
